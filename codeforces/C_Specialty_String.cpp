@@ -6,24 +6,14 @@ using namespace std;
 
 void solve() {
     int n; cin>>n;
-    int c0=0, c1=0, c2=0;
+    string s; cin>>s;
+    stack<char>st;
     for(int i=0;i<n;i++){
-        int x; cin>>x;
-        if(x==0) c0++;
-        else if(x==1) c1++;
-        else c2++;
-
+        if(!st.empty() && st.top()==s[i])
+        st.pop();
+        else st.push(s[i]);
     }
-    int ans=0;
-    ans+=c0;
-     int pair=min(c2,c1);
-     ans +=pair;
-     c1-=pair;
-     ans+=c1/3;
-     c2-=pair;
-     ans+=c2/3;
-
-    cout<<ans<<endl;
+    cout<<(st.empty()?"YES\n":"NO\n");
 }
 
 int main() {
