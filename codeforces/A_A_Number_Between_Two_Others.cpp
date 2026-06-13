@@ -5,23 +5,19 @@ using namespace std;
 #define endl '\n'
 
 void solve() {
-    int n, k; 
-    cin>>n>>k;
-    string s; cin>>s;
-    for(int i=0;i<n-k;i++){
-        if(s[i]=='1'){
-            s[i]^=1;
-            s[i+k]^=1;
+    ll x,y; cin>>x>>y;
+    ll z;
+    for(ll i=2; i<=y/x;i++){
+        ll z=x*i;
+        if(y%z==0){
+           continue;
         }
-
-    }
-    for(int i=0;i<n;i++){
-        if(s[i]=='1'){
-            cout<<"NO"<<endl; return;
-            
+        else{
+             cout<<"YES"<<endl;
+            return;
         }
     }
-    cout<<"YES"<<endl;
+    cout<<"NO"<<endl;
 }
 
 int main() {
