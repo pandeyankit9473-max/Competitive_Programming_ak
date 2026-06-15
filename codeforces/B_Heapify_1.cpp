@@ -8,14 +8,16 @@ void solve() {
     int n; cin>>n;
     vector<int>a(n+1);
     for(int i=1;i<=n;i++) cin>>a[i];
-    for(int i=1;i<=n/2;i++){
-        if(a[i]>a[2*i]) swap(a[i],a[2*i]);
-    }
-    for(int i=1;i<n;i++){
-        if(a[i]>a[i+1]){
+    for(int i=1;i<=n;i++){
+        int x=a[i];
+        while(x%2==0) x/=2;
+        int psn=i;
+        while(psn%2==0)psn/=2;
+        if(x!=psn){
             cout<<"NO"<<endl;
             return;
         }
+
     }
     cout<<"YES"<<endl;
 }
