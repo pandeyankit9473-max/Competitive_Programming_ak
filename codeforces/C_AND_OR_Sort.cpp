@@ -5,24 +5,13 @@ using namespace std;
 #define endl '\n'
 
 void solve() {
-ll n;
-cin>>n;
-string s;
-cin>>s;
-int count0=0;
-int count1=0;
-int k=0;
+    int n; cin>>n;
+    int x,y,z;
+    cin>>x>>y>>z;
+    int ans=max(abs(n-x),min(abs(n-y),abs(n-z)));
+    cout<<ans<<endl;
+}
 
-for(int i=0;i<n;i++){
-    if(s[i]=='1'&&s[i+1]=='0'){
-        k++;
-    }
-    while(i<n && s[i]=='0'){
-        i++;
-    }
-}
-cout<<k<<endl;
-}
 int main() {
 
     ios::sync_with_stdio(false);
